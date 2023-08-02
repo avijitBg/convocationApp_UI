@@ -1,0 +1,12 @@
+.program-table{
+    width: 100%;
+    display: table;
+}
+
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+}
+
+th {
+    text-align: left;
+}

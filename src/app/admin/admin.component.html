@@ -1,0 +1,23 @@
+<div class="main_content">
+    <h1> Convocation Admin </h1>
+
+    <b>Start Date: </b>: <input type="date" name="startDate" style="background-color: white;" /> <br /><br />
+    <b>End Date: </b>: <input type="date" name="endDate" style="background-color: white;" /><br /><br />
+    <b>Active: </b>
+    <select name="active" style="background-color: white;">
+        <option>N</option>
+        <option>Y</option>
+    </select> <br /><br />
+    <b>Convocation Pool: </b> <input name="convocationPool" style="background-color: white;" /> <br/><br/>
+    <b>Convocation Term: </b>
+    <ng-select [multiple]="true" [items]="convocationTermList" style="background-color: white; width: 300px; border: 1px solid black"></ng-select>
+    <br/>
+    <b>Degree Status: </b>
+    <ng-select [multiple]="true" [items]="degreeStatusList" style="background-color: white; width: 300px; border: 1px solid black"></ng-select>
+    <br/>
+    <button class="saveButton" mat-raised-button color="primary"> Save </button>
+
+
+
+
+</div>

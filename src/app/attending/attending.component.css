@@ -1,0 +1,11 @@
+* {
+    background-color: lightgrey;
+}
+
+input {
+    background-color: white !important;
+}
+
+.main_content{
+    height: 100%;
+}

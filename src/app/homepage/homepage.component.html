@@ -1,0 +1,49 @@
+<div *ngIf="active" class="student-form">
+  <div *ngIf="isEligible">
+    <mat-tab-group
+      mat-stretch-tabs="true"
+      mat-align-tabs="start"
+      [selectedIndex]="selectedIndex"
+    >
+      <mat-tab label="1. Info" disabled="true"><app-info></app-info></mat-tab>
+      <mat-tab label="2. Name" disabled="true"
+        ><app-name [name]="user.name"></app-name
+      ></mat-tab>
+      <mat-tab label="3. Address" disabled="true"
+        ><app-address [address]="user.address"></app-address
+      ></mat-tab>
+      <mat-tab label="4. Email" disabled="true"
+        ><app-email [email]="user.email"></app-email
+      ></mat-tab>
+      <mat-tab label="5. Program/s" disabled="true"
+        ><app-programs [programs]="user.programs"></app-programs
+      ></mat-tab>
+    </mat-tab-group>
+
+    <div mat-dialog-actions align="end" id="confirmButtonDiv">
+      <button
+        id="confirmButton"
+        mat-raised-button
+        color="primary"
+        (click)="prev()"
+      >
+        Back
+      </button>
+
+      <button
+        id="confirmButton"
+        mat-raised-button
+        color="primary"
+        (click)="next()"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+  <div *ngIf="!isEligible">
+    <app-not-eligible></app-not-eligible>
+  </div>
+</div>
+<div *ngIf="!active" class="not-available-page">
+  <app-not-available></app-not-available>
+</div>

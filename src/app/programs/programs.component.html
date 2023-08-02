@@ -1,0 +1,28 @@
+<h1>Apply to Attend Convocation</h1>
+
+<p>Once an RSVP selection is successfully registered in the system, the option you selected will be greyed out. You can change your RSVP status by clicking on the other option in blue. You mat changes your RSVP status as many times as needed before the application closes three weeks proir to the event</p>
+
+<table class="program-table">
+    <tr>
+      <th>Program</th>
+      <th>Graduation Eligibility</th>
+      <th>Convocation</th>
+      <th>I will attend</th>
+      <th>I will not attend</th>
+    </tr>
+    <tr *ngFor="let program of programs">
+        <td>{{program.name}}</td>
+        <td *ngIf="program.eligibility">You are eligible to attend Convocation</td>
+        <td *ngIf="!program.eligibility">You are not eligible to attend Convocation</td>
+        <td>{{program.date}}</td>
+
+        <td>
+          <button *ngIf="!program.attending" routerLink="/attending" routerLinkActive="active" ariaCurrentWhenActive="page">I will attend</button>
+          <button *ngIf="program.attending" disabled>Attending</button>
+        </td>
+        <td>
+          <button *ngIf="program.attending" routerLink="/not-attending" routerLinkActive="active" ariaCurrentWhenActive="page">I will not attend</button>
+          <button *ngIf="!program.attending" disabled>Not Attending</button>
+        </td>
+    </tr>
+</table>
